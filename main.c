@@ -11,8 +11,8 @@ int main (){
     setlocale(LC_ALL, "Bulgarian");
 
     FILE *filePointerReader, *filePointerWrite ;
-    filePointerReader = fopen("C:\\Docs\\BPE C\\findandfix\\test.txt", "r");
-    filePointerWrite = fopen("C:\\Docs\\BPE C\\findandfix\\output.txt", "w");
+    filePointerReader = fopen("C:\\Users\\dimit\\Desktop\\SP AAAAAAAAA\\SysProgGrammerFix\\test.txt", "r");
+    filePointerWrite = fopen("C:\\Users\\dimit\\Desktop\\SP AAAAAAAAA\\SysProgGrammerFix\\output.txt", "w");
 
     if (filePointerReader == NULL) {
         printf("Error opening file\n");
