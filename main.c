@@ -31,8 +31,24 @@ int main (){
 
     int sentanceFound = 0;
 
-    while (!foundSentenceEnd && (bytesRead = fread(buf, sizeof(char), bufSize, filePointerReader)) > 0) {
+    fpos_t positionCurrent;
+    fpos_t positionStart;
+
+    fgetpos(filePointerReader, &positionStart);//current position on file
+
+    while ((bytesRead = fread(buf, sizeof(char), bufSize, filePointerReader)) > 0)
+    {
+
         buf[bytesRead] = '\0'; // Null-terminate the buffer
+
+        char find = '.';
+
+        const char *ptr = strchr(buf, find);
+
+        int offset = ptr - buf;
+
+        fseek(filePointerReader,offset, SEEK_SET);
+
 
         // Search for the end of sentence in the buffer
         char *sentenceEnd = strstr(buf, ".");
@@ -41,10 +57,13 @@ int main (){
         if (!sentenceEnd)
             sentenceEnd = strstr(buf, "?");
 
+
         if (sentenceEnd) {
             // If sentence end found, write up to the end of the sentence to output file
             *sentenceEnd = '\0'; // Null-terminate at the end of the sentence
-            fprintf(filePointerWrite, "%s", buf);
+            fsetpos(filePointerReader, &positionCurrent);
+            fputs(buf, filePointerWrite);
+
             foundSentenceEnd = 1;
         } else {
             // If sentence end not found, increase buffer size and read more characters
@@ -55,6 +74,7 @@ int main (){
                 return 1;
             }
         }
+
     }
 
     fclose(filePointerReader);

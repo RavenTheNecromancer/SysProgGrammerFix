@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\findandfix.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\findandfix.dir/objects.a @CMakeFiles\findandfix.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\findandfix.dir/objects.a -Wl,--no-whole-archive -o findandfix.exe -Wl,--out-implib,libfindandfix.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\findandfix.dir\linkLibs.rsp
