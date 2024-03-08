@@ -14,6 +14,10 @@ CMake Deprecation Warning:
 -- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
+<<<<<<< Updated upstream
 -- Configuring done (0.9s)
+=======
+-- Configuring done (2.0s)
+>>>>>>> Stashed changes
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/dimit/Desktop/SP AAAAAAAAA/SysProgGrammerFix/cmake-build-debug
